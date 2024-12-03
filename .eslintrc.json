@@ -1,6 +1,7 @@
 {
   "extends": [
     "eslint:recommended",
+    "plugin:@tanstack/query/recommended",
     "plugin:jest/recommended",
     "next/core-web-vitals",
     "prettier"
