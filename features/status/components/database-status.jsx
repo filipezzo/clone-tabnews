@@ -5,17 +5,23 @@ export function DatabaseStatus() {
   const database = data?.dependencies?.database;
 
   if (error) {
-    return <p>erro ao puxar dados do banco de dados {error.message}</p>;
+    return <p>❌ {error.message}</p>;
   }
 
   if (isPending) {
-    return <p>loading...</p>;
+    return (
+      <div>
+        <h2>Database</h2>
+        <p>Loading...</p>
+      </div>
+    );
   }
 
   if (!database) return null;
 
   return (
     <div>
+      <h2>Database</h2>
       <p>Versão: {database.version} </p>
       <p>Conexões Máximas: {database.max_connections}</p>
       <p>Conexões Abertas: {database.opened_connections}</p>
